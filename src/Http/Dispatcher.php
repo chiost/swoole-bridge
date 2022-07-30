@@ -1,5 +1,7 @@
 <?php
 
+namespace Chiost\SwooleBridge\Http;
+
 use Ilex\SwoolePsr7\SwooleResponseConverter;
 use Ilex\SwoolePsr7\SwooleServerRequestConverter;
 use Nyholm\Psr7\Factory\Psr17Factory;

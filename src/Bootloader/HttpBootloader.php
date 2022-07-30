@@ -1,5 +1,8 @@
 <?php
 
+namespace Chiost\SwooleBridge\Bootloader;
+
+use Chiost\SwooleBridge\Http\Dispatcher;
 use Spiral\Boot\Bootloader\Bootloader;
 use Spiral\Boot\KernelInterface;
 use Spiral\Core\FactoryInterface;
