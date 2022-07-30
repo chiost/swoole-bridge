@@ -1,0 +1,18 @@
+{
+    "name": "chiost/swoole-bridge",
+    "description": "Swoole integration package",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Chiost\\SwooleBridge\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Kirill Ostashko",
+            "email": "ko6717@gmail.com"
+        }
+    ],
+    "require": {}
+}
