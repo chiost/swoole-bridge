@@ -8,6 +8,9 @@ use Nyholm\Psr7\Factory\Psr17Factory;
 use Psr\Container\ContainerInterface;
 use Spiral\Boot\DispatcherInterface;
 use Spiral\Http\Http;
+use Swoole\Http\Request;
+use Swoole\Http\Response;
+use Swoole\Http\Server;
 
 class Dispatcher implements DispatcherInterface
 {
@@ -30,7 +33,7 @@ class Dispatcher implements DispatcherInterface
      */
     public function serve()
     {
-        $server = new Swoole\Http\Server('localhost', 8080);
+        $server = new Server('localhost', 8080);
 
         $psr17Factory = new Psr17Factory();
 
@@ -42,13 +45,13 @@ class Dispatcher implements DispatcherInterface
             $psr17Factory
         );
 
-        $server->on('start', function (Swoole\Http\Server $server) {
-            echo "Swoole http server started at http://{$server->host}:{$server->port}\n";
+        $server->on('start', function (Server $server) {
+            echo "Swoole http server started at http://$server->host:$server->port\n";
         });
 
         $server->on(
             'request',
-            function (Swoole\Http\Request $request, Swoole\Http\Response $response) use ($serverRequestFactory) {
+            function (Request $request, Response $response) use ($serverRequestFactory) {
                 /** @var Http $http */
                 $http = $this->container->get(Http::class);
 
