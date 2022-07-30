@@ -14,5 +14,18 @@
             "email": "ko6717@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "php": "^8.1",
+        "spiral/framework": "^2.13",
+        "ilexn/swoole-convert-psr7": "^0.6.1",
+        "nyholm/psr7": "^1.5"
+    },
+    "config": {
+        "allow-plugins": {
+            "spiral/composer-publish-plugin": true
+        }
+    },
+    "require-dev": {
+        "openswoole/ide-helper": "@dev"
+    }
 }
