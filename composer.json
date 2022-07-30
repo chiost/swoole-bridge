@@ -2,6 +2,7 @@
     "name": "chiost/swoole-bridge",
     "description": "Swoole integration package",
     "type": "library",
+    "version": "1.0.0",
     "license": "MIT",
     "autoload": {
         "psr-4": {
